@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        
+     
+          
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              
+              <a class="nav-link" href="/profile">My profile</a>
+                <a class="nav-link" href="/uploadFiles">Upload a videos</a>
+
+                <a class="nav-link" href="/bash">Bash </a>
+                <a class="nav-link" href="/html">HTML</a>
+                <a class="nav-link" href="/linux">Linux</a>
+                <a class="nav-link" href="/javascript">javascript</a>
+                <a class="nav-link" href="/nodejs">Nodejs</a>
+                <a class="nav-link" href="/odoo">Odoo</a>
+                <a class="nav-link" href="/python">Python</a>
+                <a class="nav-link" href="/java">Java</a>
+                 <a class="nav-link" href="/logout">Log out</a>
+            </div>
+            
+             <button class="openbtn" onclick="openNav()">☰ </button>  <br />
+
+            
+           
+            
+             <!-- Brand/logo -->
+             <a class="navbar-brand" href="/index_pro">
+              <img src="/images/torlogo.png" alt="logo" style="width:40px;">
+            </a>
+                {{#if name}} 
+        <h4 style="color:rgb(9, 212, 87); text-align: center; text-emphasis: shadow 3px;" class="bg-dark">{{name}} </h4>
+       
+        {{/if}}
+
+          
+
+            <form class="form-inline mt-2 mt-md-0 ml-auto" method ="POST"action="/searchedVideos">
+              <input id="input_text" class="form-control mr-sm-2" type="text" name = "input_text" placeholder="Search" aria-label="Search">
+              
+              <input class="btn btn-outline-success my-2 my-sm-0" type ="submit" name = "btnSubmit" value = "Search"/>
+            
+            </form>
+         
+            </nav>
+             

@@ -1,0 +1,74 @@
+{{> header}}
+{{>navbar}}
+
+
+<h3 style="color:rgb(160, 214, 34); text-align: center; text-emphasis: shadow 3px;">welcome to your profile</h3>
+
+
+
+
+{{#if username }} 
+
+
+	<h3 style="color:rgb(160, 214, 34); text-align: center; text-emphasis: shadow 3px;">{{username}} </h3>
+
+  
+{{/if}}
+
+	<form class="form">
+	  <h2>User Profile</h2>
+	  <div class="form-group">
+		  <label for="email">Full Name:</label>
+		  <div class="relative">
+			  <input class="form-control" id="name" type="text" pattern="[a-zA-Z\s]+" value="{{username}}" autofocus="" title="Username should only contain letters. e.g. Piyush Gupta" >
+			  <i class="fa fa-user"></i>
+		  </div>
+	  </div>
+	  <div class="form-group">
+	  	<label for="email">Email address:</label>
+	  	<div class="relative">
+		  	<input class="form-control" type="email"  value="{{email}}" placeholder="Type your email address..." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+		  	<i class="fa fa-envelope"></i>
+	  	</div>
+	  </div>
+	  <div class="form-group">
+	  	<label for="email">Contact Number:</label>
+	  	<div class="relative">
+	  		<input class="form-control" type="text" value="{{contact}} " >
+	  		<i class="fa fa-phone"></i>
+	  	</div>
+	  </div>
+	  <div class="form-group">
+	  	<label for="email">Country :</label>
+	  	<div class="relative">
+	  		<input class="form-control" type="text"  value="{{country}} ">
+	  		<i class="fa fa-building"></i>
+	  	</div>
+	  </div>
+	 
+		<div class="form-group">
+			<label for="email">Specilization:</label>
+	  	<div class="relative">
+	  		<input class="form-control" type="text" id="tags"  value="{{specialization}} ">
+	  		<i class="fa fa-css3"></i>
+	  	</div>
+	  </div>
+		<div class="form-group">
+			<label for="email">Profile Picture :</label>
+	  	<div class="relative">
+	  		<div class="input-group">
+          <label class="input-group-btn">
+            <span class="btn btn-default">
+                Browse&hellip; <input type="file" style="display: true;" >
+            </span>
+          </label>
+          <input type="text" class="form-control" required="" placeholder="Attachment..." readonly>
+          <i class="fa fa-link"></i>
+      	</div>
+	  	</div>
+	  </div>
+	              	
+	 
+	</form>
+
+	
