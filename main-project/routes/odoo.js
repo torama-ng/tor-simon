@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
     videoTitle: 'Odoo Videos',
     videoFiles: walkSync,
     videoDir: 'Odoo',
+    name : req.session.user.username
    
 
   });

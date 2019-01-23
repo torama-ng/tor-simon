@@ -34,7 +34,7 @@ fs.readdir(dir,function(error, files){
             
             // Also a default node module
             require('child_process').exec(('ffmpeg -ss 00:00:25 -i ' + pathToFile + ' -vframes 1 -q:v 2 ' + pathToSnapshot), function () {
-                console.log('Saved the thumb to:', pathToSnapshot);
+              //  console.log('Saved the thumb to:', pathToSnapshot);
 
             });
 

@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
     videoTitle: 'Java Videos',
     videoFiles: walkSync,
     videoDir: 'Java',
+    name : req.session.user.username
   
     
 

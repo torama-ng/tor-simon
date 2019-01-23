@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     videoTitle: 'Handlebars',
     videoFiles: walkSync,
     videoDir: 'handlebars',
-    name : req.user.username
+    name : req.session.user.username
 
   });
 });

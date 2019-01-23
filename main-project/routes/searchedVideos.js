@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
   res.render('searchView', { 
     videoTitle: 'Searched Videos',
     videoFiles: searchSync,
-    videoDir: 'All Videos'
+    videoDir: 'All Videos',
+    name : req.session.user.username
 
   });
 });

@@ -30,7 +30,7 @@ router.get('/*', function(req, res){
     videoTitle: folder,
     videoGroup: catObj,
     videoDir: folder,
-    name : ''
+    name : req.session.user.username
       
   });
 });

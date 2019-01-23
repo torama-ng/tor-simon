@@ -23,6 +23,7 @@ router.get('/',function(req,res) {
     });    
 });
 
+
 // @route GET api/video
 // @desc Get a video
 // @access Public

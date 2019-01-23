@@ -70,7 +70,7 @@ router.get('/', function(req, res,next) {
             // check form validation if errors
           req.checkBody('user_name', 'username is required.').notEmpty();
           req.checkBody('user_email', ' Enter a valid email.').isEmail();
-          req.checkBody('user_country', 'country is required.').notEmpty();
+          req.checkBody('fullname', 'country is required.').notEmpty();
           req.checkBody('user_password', ' mis-matched password').isLength({min :4}).equals(req.body.user_password2);
 
         let errors = req.validationErrors(); 
@@ -96,7 +96,7 @@ router.get('/', function(req, res,next) {
                 // if no errors  register user here
                 let username = req.body.user_name;
                 let email = req.body.user_email;
-                let country = req.body.user_country;
+                let fullname = req.body.fullname;
                 let password = req.body.user_password;
 
                 
@@ -105,11 +105,13 @@ router.get('/', function(req, res,next) {
                 new userModel({
                   username : username,
                   email : email,
-                  country : country,
+                  fullname : fullname,
                   password : encrypted_data }).save().then((newUser) =>{
       console.log('new  user stored  '+newUser );
       let suc_info = 'Thank You for signing up, you can now login.';
-        res.redirect('/');
+        res.render('reg_complete', {
+          name : fullname
+        });
       }); 
     }});
          // const decryptedString = cryptr.decrypt(encryptedString);

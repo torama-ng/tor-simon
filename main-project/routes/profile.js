@@ -30,7 +30,7 @@ router.use(bodyParser.urlencoded({extended:false}));
  router.get('/googleuser', function(req , res){
      console.log(req.session.user);
      res.render('profile', {
-         name : req.user.username
+        name : req.session.user.username
      });
  })
 router.get('/', function(req, res){
@@ -60,7 +60,7 @@ router.get('/', function(req, res){
 
 
 router.get('/edit_profile', function(req, res){
-    res.render('profile_edit');
+    res.render('profile_edit', { name : req.session.user.username});
 });
 
 

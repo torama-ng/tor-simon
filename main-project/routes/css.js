@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     videoTitle: 'Css Videos',
     videoFiles: walkSync,
     videoDir: 'css',
-    name : req.user.username
+    name : req.session.user.username
 
   });
 });

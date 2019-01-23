@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
     videoTitle: 'Python Videos',
     videoFiles: walkSync,
     videoDir: 'Python',
+    name : req.session.user.username
    
   });
 });

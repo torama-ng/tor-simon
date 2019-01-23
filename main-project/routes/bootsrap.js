@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
     videoTitle: 'Bootstrap',
     videoFiles: walkSync,
     videoDir: 'bootstrap',
+    name : req.session.user.username
   
 
   });
