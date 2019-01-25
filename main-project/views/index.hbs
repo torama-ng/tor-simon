@@ -30,13 +30,14 @@
                         <h5 class="card_title">{{this.category}}</h5>
                         <small class="card_text  text-truncate">Last updated: 
                             <span class="text-muted">{{this.mtime}} days ago </span></small>
-                    </div>      
+                    </div>  
+                      </a>     
                     {{#if_eq this.files.length 1}}
-                        <small class="card-text nvd text-muted ">{{this.files.length}} Video</small>
+                        {{!-- <small class="card-text nvd text-muted ">{{this.files.length}} Video</small> --}}
                   
                       
                     {{/if_eq}}
-                </a> 
+              
                       
             </div>
 
