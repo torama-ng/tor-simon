@@ -70,7 +70,7 @@ router.get('/', function(req, res,next) {
             // check form validation if errors
           req.checkBody('user_name', 'username is required.').notEmpty();
           req.checkBody('user_email', ' Enter a valid email.').isEmail();
-          req.checkBody('fullname', 'country is required.').notEmpty();
+          req.checkBody('fullname', 'full name is required.').notEmpty();
           req.checkBody('user_password', ' mis-matched password').isLength({min :4}).equals(req.body.user_password2);
 
         let errors = req.validationErrors(); 

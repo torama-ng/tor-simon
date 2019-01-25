@@ -29,11 +29,14 @@
                 
                 <h5 id="{{this.category}}"> {{this.category}} Play List</h5>
                 {{#each this.files}}
-                    <div class="card rside bg-info"  onclick="playcVideo('{{this}}')">
+
+               
+                    <div class="card rside "  onclick="playcVideo('{{this}}')">
                         <img src="/images/thumbnails/{{@index}}.jpg" alt="{{@index}}" class="card_img">
                         <h6 class="card_title">{{formatMe this}}</h6>
                         
                     </div>
+                
                 {{/each}}
             {{/each}}
     

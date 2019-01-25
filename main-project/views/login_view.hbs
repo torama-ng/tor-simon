@@ -4,8 +4,6 @@
 
    
 
-<h1 style="color:rgb(115, 121, 156); text-align: center; text-emphasis: shadow 3px;">TORAMA VIDEOS PORTAL</h1>
-
 {{#if info }} 
 	<h2 style="color:rgb(9, 212, 87); text-align: center; text-emphasis: shadow 3px;" class="bg-dark">{{info}} </h2>
 
@@ -18,45 +16,104 @@
 
 
 
-<div class="container">
-	<section id="content">
-		<form action="" method="POST" >
-			<h1>Login </h1>
-			<div>
-				<input type="text" placeholder="Email" required="" id="email" name="user_email" />
-			</div>
-			<div>
-				<input type="password" placeholder="Password" required="" id="password" name="user_password" />
-			</div>
-			<div>
-				<input type="submit" value="Log in" />
-				<h4><a href="#">Lost your password?</a></h4>
-				<h2><a href="/user_reg">Register</a></h2>
-				
-			</div>
-		</form><!-- form -->
-		<a href=" /auth/facebook" class="btn btn-info"><span class="fa fa-facebook">login with facebook</span></a>
+{{!-- navigation bar --}}
+ <div class="container">
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+            <a href="#" class="navbar-brand"><span class="fas fa-code  fa-lg"></span> TORAMA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    {{#if user}}
+                    
+                        <li class="nav-item">
+                            <a href="/users/logout" class="nav-link">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/api/videos" class="nav-link">List Videos</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown"
+                            data-toggle="dropdown">Video Categories</a>
+                            <div class="dropdown-menu">
+                                <a href="/nodejs" class="dropdown-item">nodejs</a>
+                                <a href="/bootstrap" class="dropdown-item">Bootstrap</a>
+                                <a href="/handlebars" class="dropdown-item">Handlebars</a>
+                                <a href="/javascript" class="dropdown-item">Javascript</a>
+                                <a href="/mongod" class="dropdown-item">Mongodb</a>
+                                <a href="/uploadv" class="dropdown-item">Uploads</a>
+                                <a href="/Vue" class="dropdown-item">Vuejs</a>                        
+                                <a href="/react" class="dropdown-item">React</a>
+                                <a href="/angular" class="dropdown-item">Angular</a>                        
+                                <a href="/html" class="dropdown-item">HTML</a>
+                                <a href="/css" class="dropdown-item">css/sass</a>
+                                <a href="/linux" class="dropdown-item">Linux</a>
+                                <a href="/python" class="dropdown-item">Python</a>
+                                <a href="/bash" class="dropdown-item">Bash</a>  
+                                <a href="/crypto" class="dropdown-item">Crypto</a>
+                                <a href="/usermgt" class="dropdown-item">User Mgt</a>                        
+                            </div>
+                        </li>
+               
+                    {{else}}
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Login</a>
+                    </li>
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/user_reg" class="nav-link">Register</a>
+                    </li>
+                    {{/if}}
+                </ul>  
+            </div>
+ 
+        </nav>
+    </div>
+
+{{!-- login form --}}
+  <div class="container">  
+<form class="form" method="POST">
+	  <h2>Account Login</h2>
+	  <div class="form-group">
+		  <div class="relative">
+			  <input class="form-control" id="name" type="email" name="user_email" placeholder="Email" >
+			  	<i class="fa fa-envelope"></i>
+		  </div>
+	  </div>
+	  <div class="form-group">
+	  	<div class="relative">
+		  	<input class="form-control" type="password"   placeholder="Password" name="user_password">
+		  <i class="fa fa-building"></i>
+	  	</div>
+	  </div>
+	
+	
+	              	<div class="tright">
+		  <button type="submit" class="movebtn movebtnsu fa  fa-paper-plane"  > Login</button>
+	  
+		  </div>
+	
+		  <div class="tright">
+	 		<a href=" /auth/facebook" class="btn btn-primary"><span class="fa fa-facebook">login with facebook</span></a>
 		<hr>
-		<a href="/auth/google" class="btn btn-info"><span class="fa fa-google">login with google+ </span></a>
+		<a href="/auth/google" class="btn btn-danger "><span class="fa fa-google">login with google+ </span></a>
 	    <hr>
 		<a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter">login with twitter</span></a>
 		<hr>
+	  		</div>
+	</form>
 		
-		
-		 
-		<div class="button">
-			
-			<a href="/">Torama Video Portal</a>
-		</div><!-- button -->
-	</section><!-- content -->
-</div><!-- container -->
 
 
-
-
-
-
-
+</div>
 
 {{> footer}}
 
