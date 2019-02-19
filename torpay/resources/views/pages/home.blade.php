@@ -4,7 +4,7 @@
    
 @section('content')
 
-    
+  
    
 <section class="hero">
         <div class="background-image" style="background-image: url(https://wallpaper-house.com/data/out/7/wallpaper2you_139824.jpg)"></div>
@@ -18,23 +18,45 @@
         </section>
        
     <hr> <hr>
-
-
+    <div class="bg-white"> 
+ 
+    <div class="card-deck">
+            <div class=" ">
+              <div class="">
+                <img src="{{ asset('images/mastercard.png') }}" alt="">
+              </div>
+            </div>
+            <div class=" ">
+              <div class="">
+                <img src="{{ asset('images/interswitch.png') }}" alt="">
+              </div>
+            </div>
+            <div class="">
+              <div class="">
+               <img src="{{ asset('images/verve.jfif') }}" alt="">
+              </div>
+            </div>
+            <div class="">
+                    <div class="">
+                          <img src="{{ asset('images/visa.png') }}" alt="">
+                    </div>
+                  </div> 
+          </div>
 
 <!-- Full-width images with number and caption text -->
 <div class="mySlides fade">
-<img src="/images/photo_smile.png" style="width:100%">
+<img src="{{ asset('images/photo_smile.png') }}" style="width:100%">
 <div class="text"><h3 class="text-danger"></h3> </div>
 </div>
 
 <div class="mySlides fade">
-<img src="/images/shakehands.png" style="width:100%">
+<img src="  {{ asset('images/shakehands.png') }}" style="width:100%">
 <div class="text"> <h3 class="text-danger"> </h3>
   </div>
 </div>
 
 <div class="mySlides fade">
-<img src="/images/smile2.png" style="width:100%">
+<img src="  {{ asset('images/smile2.png') }}" style="width:100%">
 <div class="text"> <h3 class="text-danger"></h3></div>
 </div>
 
@@ -53,6 +75,6 @@
         <a href="" ><button type="submit"  class="btn bg-primary">Subscribe now</button> </a>
     </form>
 </section>
-    
+</div>
    
 @endsection

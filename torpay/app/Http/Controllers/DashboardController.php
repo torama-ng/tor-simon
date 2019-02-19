@@ -6,7 +6,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\transaction;
+use App\Transaction;
+use App\Total_trax;
 use Illuminate\Support\Facades\Input;
 
 class DashboardController extends Controller
@@ -28,32 +29,49 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        return redirect('/dash');
     }
+
+    // about function
     public function about(){
         return view('pages.about');
     }
+
+    // dashboard function
     public function dash(){
-        return view('pages.dashboard');
+        $current_user =  Auth::user()->email;
+        $tranx = \DB::table('transactions')->where('customer_name', $current_user)->get()->toArray();
+        $total = \DB::table('total_traxs')->where('customer_name', $current_user)->get()->toArray();
+        $last_tranx =  \DB::table('total_traxs')->where('customer_name', $current_user)->pluck('created_at')->last();
+        $success_ful_trax  = count( $tranx);
+        $my_total_trax  = count( $total);
+        $failed = ($my_total_trax - $success_ful_trax);
+        return view('pages.dashboard', compact('success_ful_trax', 'my_total_trax','failed',
+        'last_tranx'));
+
     }
+
+    // profile funtion
     public function profile(){
         // $profile = \DB::table('users')->where('email', 'swagasoft@gmail.com');
         $profile =  Auth::user()->name;
         $user_email =  Auth::user()->email;
         return view('pages.profile', compact('profile', 'user_email'));
     }
-    public function paynow(){
-        
+
+    // pay now function
+    public function paynow(){ 
         return view('pages.paynow', );
     }
+
+    // payment function
     public function payment(){
-       
         return view('pages.payment');
     }
-    // Handling in comming request.
+
+    // Handling in comming request from gtpay.
     public function request(){
     // var_dump($_POST);
-   
         $gtpay_tranx_status_code =  $_REQUEST['gtpay_tranx_status_code'];
         $gtpay_tranx_status_msg =  $_REQUEST['gtpay_tranx_status_msg'];
         $gtpay_tranx_amt =  $_REQUEST['gtpay_tranx_amt'];
@@ -78,21 +96,32 @@ class DashboardController extends Controller
             'gtpay_tranx_status_msg', 'gtpay_tranx_amt',
         'gtpay_echo_data', 'gtpay_cust_id', 'success_message','gtpay_tranx_id' ));
         // return ($_POST);
-  
-      
-   
     }
+
+    // payment post function
     public function payment_post(){
         $gtpay_tranx_id = $_REQUEST['gtpay_tranx_id'];
         $gtpay_cust_id = $_REQUEST['gtpay_cust_id'];
         $gtpay_tranx_amt = $_REQUEST['gtpay_tranx_amt'];
+        $gtpay_tranx_memo = $_REQUEST['gtpay_tranx_memo'];
+
+        $mydata = new Total_trax;
+        $mydata->transaction_id = $gtpay_tranx_id;
+        $mydata->customer_id =  $gtpay_cust_id;
+        $mydata->amount =   $gtpay_tranx_amt;
+        $mydata->memo =   $gtpay_tranx_memo;
+        $current_user =  Auth::user()->email;
+        $mydata->customer_name =  $current_user;
+        $mydata->save();
         return view('pages.payment', compact('gtpay_tranx_id','gtpay_cust_id', 'gtpay_tranx_amt', 'gtpay_tranx_id'));
     }
 
-    public function transactions(){
-        $tranx = \DB::table('transactions')->where('customer_name', 'swagasoft@gmail.com')->array();
-
-
-        return view('pages.transactions','tranx');
-    }
+    // transaction function
+    // public function transactions(){
+    //     //testing total number of transactions 
+    //    $total_trax  = App\Transactions::count();
+    //     $current_user =  Auth::user()->email;
+    //     $tranx = \DB::table('transactions')->where('customer_name', $current_user)->get()->toArray();
+    //     return view('pages.transactions',compact('tranx'));
+    // }
 }

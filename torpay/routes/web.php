@@ -12,11 +12,11 @@
 */
 
 Route::get('/', 'pagesController@index');
-Route::get('/login', 'pagesController@login');
-Route::get('/register', 'pagesController@register');
-Route::get('/services', 'pagesController@services');
+// Route::get('/login', 'pagesController@login');
+// Route::get('/register', 'pagesController@register');
+// Route::get('/services', 'pagesController@services');
 
-Route::resource('posts', 'PostController');
+Route::resource('trax', 'TransactionsController');
 
 Auth::routes();
 

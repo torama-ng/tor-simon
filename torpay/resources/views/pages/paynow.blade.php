@@ -5,14 +5,14 @@
     
         <ul class="nav nav-pills nav-justified">
           <li class="nav-item  ">
-            <a class="nav-link active" href="/transactions">Transactions</a>
+            <a class="nav-link active" href="/trax">My transactions</a>
           </li>
           
           <li class="nav-item ">
             <a class="nav-link active " href="/paynow">pay now</a>
           </li>
           <li class="nav-item  ">
-            <a class="nav-link active " href="/history">History</a>
+            <a class="nav-link active " href="/dash">Dashboard</a>
           </li>
           <li class="nav-item  ">
             <a class="nav-link active " href="/profile">Profile</a>

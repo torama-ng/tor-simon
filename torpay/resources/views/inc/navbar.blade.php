@@ -20,7 +20,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        <a class="nav-item nav-link" href="">Services</a>
+                        <a class="nav-item nav-link" href="/services">Services</a>
             <a class="nav-item nav-link" href="/about">About</a>
                         @guest
                             <li class="nav-item">
