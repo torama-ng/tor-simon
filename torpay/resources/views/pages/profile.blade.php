@@ -54,7 +54,7 @@
             </div>
             <div class="clearfix"></div>
             <hr style="margin:5px 0 5px 0;">
-<div class="col-sm-5 col-xs-6 title " >Date Of Joining:</div><div class="col-sm-7">----------</div>
+<div class="col-sm-5 col-xs-6 title " >Date Of Joining:</div><div class="col-sm-7">{{$reg_date}} </div>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 <div class="col-sm-5 col-xs-6 title " >Email:</div><div class="col-sm-7"> {{$user_email}}</div>

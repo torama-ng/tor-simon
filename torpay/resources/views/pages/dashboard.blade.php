@@ -66,7 +66,7 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td><h4>Successful Transactiionsh</h4>  </td>
+                          <td><h4>Successful Transactiions</h4>  </td>
                           <td> :</td>
                           <td><h4> {{$success_ful_trax}}</h4></td>
                         </tr>

@@ -56,12 +56,15 @@ class DashboardController extends Controller
         // $profile = \DB::table('users')->where('email', 'swagasoft@gmail.com');
         $profile =  Auth::user()->name;
         $user_email =  Auth::user()->email;
-        return view('pages.profile', compact('profile', 'user_email'));
+        $reg_date =  \DB::table('users')->where('email', $user_email)->pluck('created_at');
+        return view('pages.profile', compact('profile', 'user_email','reg_date'));
     }
 
     // pay now function
     public function paynow(){ 
-        return view('pages.paynow', );
+        $user_email =  Auth::user()->email;
+        $user_id =  \DB::table('users')->where('email', $user_email)->pluck('id');
+        return view('pages.paynow', compact('user_id'));
     }
 
     // payment function

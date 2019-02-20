@@ -27,6 +27,7 @@
 
 
 @php
+    // $gtpay_cust_id = {{$user_id}} ;
     $gtpay_cust_id = time().rand(123, 100);
 $gtpay_tranx_id = rand(100000, 9000000);
 
@@ -63,7 +64,7 @@ $gtpay_tranx_id = rand(100000, 9000000);
               </div>
               <div class="container">
                   <span class="label label-primary">Customer id</span>
-                  <input type="show" readonly  class="form-control"  name="gtpay_cust_id"  value="<?php echo $gtpay_cust_id; ?>"  />
+              <input type="show" readonly  class="form-control"  name="gtpay_cust_id"  value="{{$user_id}}"  />
               </div>
            
               <div class="container">
