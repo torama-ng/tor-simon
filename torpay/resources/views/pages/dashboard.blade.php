@@ -66,24 +66,24 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td><h4>Successful Transactiions</h4>  </td>
+                          <td><h4 class="alert alert-success">Successful Transactiions</h4>  </td>
                           <td> :</td>
-                          <td><h4> {{$success_ful_trax}}</h4></td>
+                          <td><h4 class="alert alert-success"> {{$success_ful_trax}}</h4></td>
                         </tr>
                         <tr>
-                          <td><h4>All my transactions</h4> </td>
+                          <td><h4 class="alert alert-info">All my transactions</h4> </td>
                           <td> :</td>
-                          <td><h4>{{$my_total_trax}}</h4></td>
+                          <td><h4 class=" alert alert-info">{{$my_total_trax}}</h4></td>
                         </tr>
                         <tr>
-                          <td> <h4>Failed transaction</h4></td>
+                          <td> <h4 class="alert alert-danger">Failed transaction</h4></td>
                           <td> :</td>
-                          <td> <h4>{{$failed}}</h4></td>
+                          <td> <h4 class="alert alert-danger" >{{$failed}}</h4></td>
                         </tr>
                         <tr>
-                          <td> <h4>Last Transaction made </h4></td>
+                          <td> <h4 class="alert alert-secondary">Last Transaction made </h4></td>
                           <td> :</td>
-                          <td> <h6> {{$last_tranx}} </h6></td>
+                          <td> <h6 class="alert alert-secondary"> {{$last_tranx}} </h6></td>
                         </tr>
                       </tbody>
                     </table>
